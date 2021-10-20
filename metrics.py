@@ -198,6 +198,10 @@ class PCK(object):
         return self.eval(predictions[0], target[0], alpha)
 
     def DeepPose(self, output, target, meta1, meta2, alpha=0.5):
-        predictions = (0. + (output).reshape(-1,16,2).detach().cpu().numpy())*self.opts.outputRes
-        target = (0. + (target).reshape(-1,16,2).cpu().numpy())*self.opts.outputRes
+        try:
+            predictions = (0. + (output).reshape(-1,16,2).detach().cpu().numpy())*self.opts.outputRes
+            target = (0. + (target).reshape(-1,16,2).cpu().numpy())*self.opts.outputRes
+        except:
+            predictions = (0. + (output).reshape(-1,17,2).detach().cpu().numpy())*self.opts.outputRes
+            target = (0. + (target).reshape(-1,17,2).cpu().numpy())*self.opts.outputRes
         return self.eval(predictions, target, alpha)
