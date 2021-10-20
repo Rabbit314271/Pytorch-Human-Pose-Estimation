@@ -22,5 +22,3 @@ nThreads: 4
 
 gpuid: 0
 nEpochs: 200
-
-saveDir: ./trained_models
