@@ -7,7 +7,7 @@ baseName: resnet34
 data_loader_size = 16
 #
 #
-#loadModel = ../../trainedModels/deepPose.pth
+loadModel = /content/drive/MyDrive/coco/model_10.pth
 
 mini_batch_count: 1
 optimizer_type: RMSprop
