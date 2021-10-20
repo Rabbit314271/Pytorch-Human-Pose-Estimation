@@ -10,6 +10,9 @@ from __future__ import print_function
 
 import numpy as np
 
+import pyximport
+pyximport.install()
+
 from .cpu_nms import cpu_nms
 from .gpu_nms import gpu_nms
 
